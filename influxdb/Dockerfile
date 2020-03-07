@@ -8,7 +8,6 @@ RUN apk add openrc vim influxdb telegraf
 
 ENV TELEGRAF_CONFIG_PATH /etc/telegraf.conf
 
-
 COPY start.sh /start.sh
 RUN chmod 777 /start.sh
 
