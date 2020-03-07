@@ -1,0 +1,4 @@
+CREATE DATABASE phpmyadmin;
+GRANT ALL PRIVILEGES ON *.* TO 'admin'@'%' IDENTIFIED BY 'admin';
+GRANT ALL PRIVILEGES ON phpmyadmin.* TO 'pma'@'%' IDENTIFIED BY 'pmapass';
+FLUSH PRIVILEGES;
