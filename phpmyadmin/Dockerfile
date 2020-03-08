@@ -30,4 +30,4 @@ COPY default.conf /etc/nginx/conf.d/default.conf
 #setup phpmyadmin
 COPY config.inc.php etc/phpmyadmin/config.inc.php
 
-ENTRYPOINT ["/bin/sh" , "/start.sh"]
+CMD ["/bin/sh" , "/start.sh"]
