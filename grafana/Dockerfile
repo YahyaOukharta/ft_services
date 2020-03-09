@@ -12,7 +12,6 @@ RUN chmod 777 /start.sh
 RUN mkdir -p  /run/openrc/
 RUN touch /run/openrc/softlevel
 
-WORKDIR /usr/share/grafana
+COPY influxdb.yaml /usr/share/grafana/conf/provisioning/datasources/influxdb.yaml
 
-
-ENTRYPOINT ["grafana-server", "--config=/etc/grafana.ini"]
+ENTRYPOINT ["/bin/sh", "/start.sh"]

@@ -78,3 +78,63 @@ spec:
         ports:
         - containerPort: 3306
           name: mysql
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grafana
+  labels:
+    app: grafana
+spec:
+  selector:
+      matchLabels:
+        app: grafana
+  replicas: 1
+  #restartPolicy: Always
+  template:
+    metadata:
+      labels:
+        app: grafana
+    spec:
+      containers:
+      - name: grafana
+        image: grafana-img
+        imagePullPolicy: Never
+        env: 
+        - name: DB_HOST
+          value: influxdb
+        ports:
+        - containerPort: 3000
+          name: grafana
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: influxdb
+  labels:
+    app: influxdb
+spec:
+  selector:
+      matchLabels:
+        app: influxdb
+  replicas: 1
+  #restartPolicy: Always
+  template:
+    metadata:
+      labels:
+        app: influxdb
+    spec:
+      containers:
+      - name: influxdb
+        image: influxdb-img
+        imagePullPolicy: Never
+        volumeMounts:
+        - name: dockerd
+          mountPath: /var/run/docker.sock
+        ports:
+        - containerPort: 8086
+          name: influxdb
+      volumes:
+      - name : dockerd
+        hostPath:
+          path: /var/run/docker.sock
