@@ -1,3 +1,68 @@
+apiVersion: scheduling.k8s.io/v1
+kind: PriorityClass
+metadata:
+  name: high-priority
+value: 1000000
+globalDefault: false
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: influxdb
+  labels:
+    app: influxdb
+spec:
+  selector:
+      matchLabels:
+        app: influxdb
+  replicas: 1
+  #restartPolicy: Always
+  template:
+    metadata:
+      labels:
+        app: influxdb
+    spec:
+      containers:
+      - name: influxdb
+        image: influxdb-img
+        imagePullPolicy: Never
+        volumeMounts:
+        - name: dockerd
+          mountPath: /var/run/docker.sock
+        ports:
+        - containerPort: 8086
+          name: influxdb
+      volumes:
+      - name : dockerd
+        hostPath:
+          path: /var/run/docker.sock
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql
+  labels:
+    app: mysql
+spec:
+  selector:
+      matchLabels:
+        app: mysql
+  replicas: 1
+  #restartPolicy: Always
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      containers:
+      - name: mysql
+        image: mysql-img
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 3306
+          name: mysql
+      priorityClassName: high-priority
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -57,31 +122,6 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mysql
-  labels:
-    app: mysql
-spec:
-  selector:
-      matchLabels:
-        app: mysql
-  replicas: 1
-  #restartPolicy: Always
-  template:
-    metadata:
-      labels:
-        app: mysql
-    spec:
-      containers:
-      - name: mysql
-        image: mysql-img
-        imagePullPolicy: Never
-        ports:
-        - containerPort: 3306
-          name: mysql
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
   name: grafana
   labels:
     app: grafana
@@ -107,34 +147,3 @@ spec:
         - containerPort: 3000
           name: grafana
 ---
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: influxdb
-  labels:
-    app: influxdb
-spec:
-  selector:
-      matchLabels:
-        app: influxdb
-  replicas: 1
-  #restartPolicy: Always
-  template:
-    metadata:
-      labels:
-        app: influxdb
-    spec:
-      containers:
-      - name: influxdb
-        image: influxdb-img
-        imagePullPolicy: Never
-        volumeMounts:
-        - name: dockerd
-          mountPath: /var/run/docker.sock
-        ports:
-        - containerPort: 8086
-          name: influxdb
-      volumes:
-      - name : dockerd
-        hostPath:
-          path: /var/run/docker.sock

@@ -1,8 +1,12 @@
 sh /setup_php.sh
 
 #create pma tables,
-mysql < /usr/share/webapps/phpmyadmin/sql/create_tables.sql mysql -h ${DB_HOST} -u admin -padmin 
+while ! mysqladmin ping -h ${DB_HOST} --silent; do
+    echo "[!] Waiting for host : ${DB_HOST}"
+    sleep 1
+done
 
+mysql < /usr/share/webapps/phpmyadmin/sql/create_tables.sql mysql -h ${DB_HOST} -u admin -padmin 
 #start services
 rc-status
 rc-service nginx start
