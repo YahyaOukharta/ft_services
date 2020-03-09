@@ -28,7 +28,7 @@ $i++;
 /* Authentication type */
 $cfg['Servers'][$i]['auth_type'] = 'cookie';
 /* Server parameters */
-$cfg['Servers'][$i]['host'] = '192.168.99.101';
+$cfg['Servers'][$i]['host'] = '';
 $cfg['Servers'][$i]['port'] = '3306';
 $cfg['Servers'][$i]['compress'] = false;
 $cfg['Servers'][$i]['AllowNoPassword'] = false;
@@ -38,7 +38,7 @@ $cfg['Servers'][$i]['AllowNoPassword'] = false;
  */
 
 /* User used to manipulate with storage */
-$cfg['Servers'][$i]['controlhost'] = '192.168.99.101';
+$cfg['Servers'][$i]['controlhost'] = '';
 $cfg['Servers'][$i]['controlport'] = '3306';
 $cfg['Servers'][$i]['controluser'] = 'pma';
 $cfg['Servers'][$i]['controlpass'] = 'pmapass';

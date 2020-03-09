@@ -28,6 +28,6 @@ RUN cp /etc/nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf.old
 COPY default.conf /etc/nginx/conf.d/default.conf
 
 #setup phpmyadmin
-COPY config.inc.php etc/phpmyadmin/config.inc.php
+COPY config.inc.php /etc/phpmyadmin/config.inc.php
 
-CMD ["/bin/sh" , "/start.sh"]
+ENTRYPOINT ["/bin/sh" , "/start.sh"]

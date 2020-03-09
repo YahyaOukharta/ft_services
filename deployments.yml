@@ -19,6 +19,62 @@ spec:
       - name: wordpress
         image: wp-img
         imagePullPolicy: Never
+        env: 
+        - name: DB_HOST
+          value: mysql
         ports:
         - containerPort: 5050
           name: wordpress
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: phpmyadmin
+  labels:
+    app: phpmyadmin
+spec:
+  selector:
+      matchLabels:
+        app: phpmyadmin
+  replicas: 1
+  #restartPolicy: Always
+  template:
+    metadata:
+      labels:
+        app: phpmyadmin
+    spec:
+      containers:
+      - name: phpmyadmin
+        image: pma-img
+        imagePullPolicy: Never
+        env: 
+        - name: DB_HOST
+          value: mysql
+        ports:
+        - containerPort: 5000
+          name: phpmyadmin
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql
+  labels:
+    app: mysql
+spec:
+  selector:
+      matchLabels:
+        app: mysql
+  replicas: 1
+  #restartPolicy: Always
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      containers:
+      - name: mysql
+        image: mysql-img
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 3306
+          name: mysql

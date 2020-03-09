@@ -1,3 +1,7 @@
+#setup db host
+sed -i "s/define( 'DB_HOST', '' );/define( 'DB_HOST', '${DB_HOST}' );/g" /usr/share/webapps/wordpress/wp-config.php
+
+
 #php env vars
 PHP_FPM_USER="www"
 PHP_FPM_GROUP="www"

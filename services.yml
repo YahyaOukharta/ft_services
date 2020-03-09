@@ -12,3 +12,30 @@ spec:
     selector:
         app : wordpress
     type: LoadBalancer
+---
+apiVersion: v1
+kind: Service
+metadata:
+    name: phpmyadmin
+    labels:
+        app: phpmyadmin
+spec:
+    ports:
+    - port : 5000
+      targetPort: 5000
+      nodePort: 5000
+    selector:
+        app : phpmyadmin
+    type: LoadBalancer
+---
+apiVersion: v1
+kind: Service
+metadata:
+    name: mysql
+    labels:
+        app: mysql
+spec:
+    ports:
+    - port : 3306
+    selector:
+        app : mysql

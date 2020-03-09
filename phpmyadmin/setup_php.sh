@@ -1,3 +1,6 @@
+#setup db host
+sed -i "/host/ s/\'\'/\'${DB_HOST}\'/g" /etc/phpmyadmin/config.inc.php
+
 #php env vars
 PHP_FPM_USER="www"
 PHP_FPM_GROUP="www"
