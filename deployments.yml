@@ -1,9 +1,3 @@
-apiVersion: scheduling.k8s.io/v1
-kind: PriorityClass
-metadata:
-  name: high-priority
-value: 1000000
-globalDefault: false
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -61,7 +55,6 @@ spec:
         ports:
         - containerPort: 3306
           name: mysql
-      priorityClassName: high-priority
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -90,6 +83,13 @@ spec:
         ports:
         - containerPort: 5050
           name: wordpress
+      initContainers:
+      - name: init-db
+        image: init-db-img
+        imagePullPolicy: Never
+        env: 
+        - name: DB_HOST
+          value: mysql    
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -118,6 +118,13 @@ spec:
         ports:
         - containerPort: 5000
           name: phpmyadmin
+      initContainers:
+      - name: init-db
+        image: init-db-img
+        imagePullPolicy: Never
+        env: 
+        - name: DB_HOST
+          value: mysql
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -146,4 +153,11 @@ spec:
         ports:
         - containerPort: 3000
           name: grafana
+      initContainers:
+      - name: init-influx
+        image: init-influx-img
+        imagePullPolicy: Never
+        env: 
+        - name: DB_HOST
+          value: influxdb
 ---
