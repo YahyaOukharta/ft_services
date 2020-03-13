@@ -1,3 +1,5 @@
+docker build nginx/ -t nginx-img
+
 docker build phpmyadmin/ -t pma-img
 docker build wordpress/ -t wp-img
 docker build mysql/ -t mysql-img

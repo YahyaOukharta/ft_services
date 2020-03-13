@@ -13,5 +13,6 @@ RUN mkdir -p  /run/openrc/
 RUN touch /run/openrc/softlevel
 
 COPY influxdb.yaml /usr/share/grafana/conf/provisioning/datasources/influxdb.yaml
+COPY grafana.ini /etc/grafana.ini
 
 ENTRYPOINT ["/bin/sh", "/start.sh"]
