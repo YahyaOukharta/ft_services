@@ -8,7 +8,6 @@ spec:
     ports:
     - port : 5050
       targetPort: 5050
-      nodePort: 5050
     selector:
         app : wordpress
     type: LoadBalancer
@@ -23,7 +22,6 @@ spec:
     ports:
     - port : 5000
       targetPort: 5000
-      nodePort: 5000
     selector:
         app : phpmyadmin
     type: LoadBalancer
@@ -50,7 +48,6 @@ spec:
     ports:
     - port : 3000
       targetPort: 3000
-      nodePort: 3000
     selector:
         app : grafana
     type: LoadBalancer
@@ -67,21 +64,33 @@ spec:
     selector:
         app : influxdb
 ---
-# apiVersion: v1
-# kind: Service
-# metadata:
-#     name: nginx
-#     labels:
-#         app: nginx
-# spec:
-#     ports:
-#     - port : 80
-#       targetPort: 80
-#       nodePort: 80
-#     - port : 443
-#       targetPort: 443
-#       nodePort: 443
-#     selector:
-#         app : nginx
-#     type: LoadBalancer
-# ---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: metallb-system
+  name: config
+data:
+  config: |
+    address-pools:
+    - name: default
+      protocol: layer2
+      addresses:
+      - 192.168.99.101-192.168.99.105
+
+---
+#apiVersion: v1
+#kind: Service
+#metadata:
+#    name: nginx
+#    labels:
+#        app: nginx
+#spec:
+#    ports:
+#    - port : 80
+#      targetPort: 80
+#    - port : 443
+#      targetPort: 443
+#    selector:
+#        app : nginx
+#    type: LoadBalancer
+#---
