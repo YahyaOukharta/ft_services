@@ -104,7 +104,7 @@
             {
               "key": "io.kubernetes.container.name",
               "operator": "=",
-              "value": "grafana"
+              "value": "phpmyadmin"
             }
           ]
         }
@@ -237,7 +237,7 @@
             {
               "key": "io.kubernetes.container.name",
               "operator": "=",
-              "value": "grafana"
+              "value": "phpmyadmin"
             }
           ]
         }
@@ -376,7 +376,7 @@
             {
               "key": "io.kubernetes.container.name",
               "operator": "=",
-              "value": "grafana"
+              "value": "phpmyadmin"
             }
           ]
         },
@@ -427,7 +427,7 @@
             {
               "key": "io.kubernetes.container.name",
               "operator": "=",
-              "value": "grafana"
+              "value": "phpmyadmin"
             }
           ]
         }
@@ -547,7 +547,7 @@
             {
               "key": "io.kubernetes.container.name",
               "operator": "=",
-              "value": "grafana"
+              "value": "phpmyadmin"
             }
           ]
         }
@@ -571,7 +571,7 @@
   },
   "timepicker": {},
   "timezone": "",
-  "title": "Grafana",
+  "title": "Phpmyadmin",
   "uid": "",
   "version": 1
 }

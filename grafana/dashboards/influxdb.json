@@ -104,7 +104,7 @@
             {
               "key": "io.kubernetes.container.name",
               "operator": "=",
-              "value": "grafana"
+              "value": "influxdb"
             }
           ]
         }
@@ -237,7 +237,7 @@
             {
               "key": "io.kubernetes.container.name",
               "operator": "=",
-              "value": "grafana"
+              "value": "influxdb"
             }
           ]
         }
@@ -376,7 +376,7 @@
             {
               "key": "io.kubernetes.container.name",
               "operator": "=",
-              "value": "grafana"
+              "value": "influxdb"
             }
           ]
         },
@@ -427,7 +427,7 @@
             {
               "key": "io.kubernetes.container.name",
               "operator": "=",
-              "value": "grafana"
+              "value": "influxdb"
             }
           ]
         }
@@ -547,7 +547,7 @@
             {
               "key": "io.kubernetes.container.name",
               "operator": "=",
-              "value": "grafana"
+              "value": "influxdb"
             }
           ]
         }
@@ -571,7 +571,7 @@
   },
   "timepicker": {},
   "timezone": "",
-  "title": "Grafana",
+  "title": "InfluxDB",
   "uid": "",
   "version": 1
 }

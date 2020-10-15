@@ -104,7 +104,7 @@
             {
               "key": "io.kubernetes.container.name",
               "operator": "=",
-              "value": "grafana"
+              "value": "wordpress"
             }
           ]
         }
@@ -237,7 +237,7 @@
             {
               "key": "io.kubernetes.container.name",
               "operator": "=",
-              "value": "grafana"
+              "value": "wordpress"
             }
           ]
         }
@@ -376,7 +376,7 @@
             {
               "key": "io.kubernetes.container.name",
               "operator": "=",
-              "value": "grafana"
+              "value": "wordpress"
             }
           ]
         },
@@ -427,7 +427,7 @@
             {
               "key": "io.kubernetes.container.name",
               "operator": "=",
-              "value": "grafana"
+              "value": "wordpress"
             }
           ]
         }
@@ -547,7 +547,7 @@
             {
               "key": "io.kubernetes.container.name",
               "operator": "=",
-              "value": "grafana"
+              "value": "wordpress"
             }
           ]
         }
@@ -571,7 +571,7 @@
   },
   "timepicker": {},
   "timezone": "",
-  "title": "Grafana",
+  "title": "Wordpress",
   "uid": "",
   "version": 1
 }
