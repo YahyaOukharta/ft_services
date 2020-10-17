@@ -8,3 +8,6 @@ docker build influxdb/ -t influxdb-img
 
 docker build mysql/init-db/ -t init-db-img
 docker build influxdb/init-influx/ -t init-influx-img
+
+#kubectl delete deployments mysql
+#kubectl apply -f deployments.yml
