@@ -20,16 +20,22 @@ spec:
       - name: influxdb
         image: influxdb-img
         imagePullPolicy: Never
-        volumeMounts:
-        - name: dockerd
-          mountPath: /var/run/docker.sock
         ports:
         - containerPort: 8086
           name: influxdb
+        volumeMounts:
+        - name : dockerd
+          mountPath: /var/run/docker.sock
+#        - name : influxdb-pv
+#          mountPath : /var/lib/influxdb      
       volumes:
       - name : dockerd
         hostPath:
           path: /var/run/docker.sock
+#      - name : influxdb-pv
+#        persistentVolumeClaim : 
+#          claimName : influxdb-pvc
+
 ---
 apiVersion: apps/v1
 kind: Deployment

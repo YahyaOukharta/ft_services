@@ -7,7 +7,7 @@ metadata:
 spec:
   storageClassName: manual
   capacity:
-    storage: 5Gi
+    storage: 1.5Gi
   accessModes:
     - ReadWriteOnce
   hostPath:
@@ -24,4 +24,32 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 5Gi
+      storage: 1.5Gi
+---
+#apiVersion: v1
+#kind: PersistentVolume
+#metadata:
+  #  name: influxdb-pv
+#  labels:
+  #    type: local
+#spec:
+  #  storageClassName: manual
+#  capacity:
+  #    storage: 1.5Gi
+#  accessModes:
+  #    - ReadWriteOnce
+#  hostPath:
+  #    path: "/mnt/data"
+#---
+  #apiVersion: v1
+#kind: PersistentVolumeClaim
+#metadata:
+  #  name: influxdb-pvc
+#  labels:
+  #    app: influxdb
+#spec:
+  #  accessModes:
+  #    - ReadWriteOnce
+#  resources:
+  #    requests:
+  #      storage: 1.5Gi
