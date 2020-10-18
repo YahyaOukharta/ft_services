@@ -565,9 +565,9 @@
   "templating": {
     "list": []
   },
-  "time": {
-    "from": "2020-10-15T04:14:38.967Z",
-    "to": "2020-10-15T04:20:01.582Z"
+   "time": {
+    "from": "now-5m",
+    "to": "now"
   },
   "timepicker": {},
   "timezone": "",
