@@ -33,7 +33,7 @@ $cfg['Servers'][$i]['port'] = '3306';
 $cfg['Servers'][$i]['compress'] = false;
 $cfg['Servers'][$i]['AllowNoPassword'] = false;
 
-$cfg['PmaAbsoluteUri'] = '192.168.99.104/phpmyadmin';
+$cfg['PmaAbsoluteUri'] = '';
 
 /**
  * phpMyAdmin configuration storage settings.

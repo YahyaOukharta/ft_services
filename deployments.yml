@@ -202,3 +202,34 @@ spec:
         - containerPort: 22
           name : ssh
 ---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ftps
+  labels:
+    app: ftps
+spec:
+  selector:
+      matchLabels:
+        app: ftps
+  replicas: 1
+  #restartPolicy: Always
+  template:
+    metadata:
+      labels:
+        app: ftps
+    spec:
+      containers:
+      - name: ftps
+        image: ftps-img
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 21
+          name : ftps
+        - containerPort: 20
+          name : ftp-data
+        - containerPort: 20020
+          name : ftps-passive21
+        - containerPort: 20021
+          name : ftps-passive20
+---

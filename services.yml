@@ -103,3 +103,29 @@ spec:
         app : nginx
     type: LoadBalancer
 ---
+apiVersion: v1
+kind: Service
+metadata:
+    name: ftps
+    labels:
+        app: ftps
+spec:
+    ports:
+    - port : 21
+      targetPort: 21
+      name : ftps
+    - port : 20
+      targetPort: 20
+      name : ftp-data
+    - port : 20020
+      targetPort: 20020
+      name : ftps-passive20
+    - port : 20021
+      targetPort: 20021
+      name : ftps-passive21
+    externalIPs :
+    - 192.168.99.103
+    selector:
+        app : ftps
+    type: LoadBalancer
+---

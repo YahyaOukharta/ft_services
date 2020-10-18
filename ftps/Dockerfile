@@ -1,7 +1,7 @@
 FROM alpine
 
-EXPOSE 20
-EXPOSE 21
+EXPOSE 20-21
+EXPOSE 20020-20021
 
 RUN apk add vsftpd openssl openrc lftp vim
 
