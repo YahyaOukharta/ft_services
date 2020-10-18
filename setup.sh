@@ -16,3 +16,5 @@ kubectl apply -f pvc.yml
 
 kubectl apply -f deployments.yml
 kubectl apply -f services.yml
+
+ssh-keygen -R 192.168.99.104

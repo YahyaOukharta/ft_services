@@ -93,8 +93,10 @@ spec:
     ports:
     - port : 80
       targetPort: 80
-#    - port : 443
-#      targetPort: 443
+      name : http
+    - port : 22
+      targetPort: 22
+      name : ssh
     selector:
         app : nginx
     type: LoadBalancer

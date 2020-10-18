@@ -1,8 +1,8 @@
 FROM alpine
 
-EXPOSE 80 443
+EXPOSE 80 443 22
 
-RUN apk add openrc nginx vim 
+RUN apk add openrc nginx vim openssh
 
 
 
@@ -13,7 +13,11 @@ RUN chmod 777 /start.sh
 RUN mkdir -p  /run/openrc/
 RUN touch /run/openrc/softlevel
 
-#RUN cp /etc/nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf.old
+RUN rc-update add sshd
+
+#create user
+RUN adduser -D admin
+RUN echo "admin:admin" | chpasswd
 
 COPY default.conf /etc/nginx/conf.d/default.conf
 
