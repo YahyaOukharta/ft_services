@@ -25,7 +25,7 @@ spec:
     - port : 5000
       targetPort: 5000
     externalIPs :
-    - 192.168.99.104
+    - 192.168.99.103
     selector:
         app : phpmyadmin
     type: LoadBalancer
@@ -53,7 +53,7 @@ spec:
     - port : 3000
       targetPort: 3000
     externalIPs :
-    - 192.168.99.102
+    - 192.168.99.103
     selector:
         app : grafana
     type: LoadBalancer
@@ -97,6 +97,8 @@ spec:
     - port : 22
       targetPort: 22
       name : ssh
+    externalIPs :
+    - 192.168.99.103
     selector:
         app : nginx
     type: LoadBalancer
