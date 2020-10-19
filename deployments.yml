@@ -228,8 +228,8 @@ spec:
           name : ftps
         - containerPort: 20
           name : ftp-data
-        - containerPort: 20020
-          name : ftps-passive21
         - containerPort: 20021
+          name : ftps-passive21
+        - containerPort: 20020
           name : ftps-passive20
 ---
