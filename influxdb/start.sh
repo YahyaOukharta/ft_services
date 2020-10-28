@@ -6,4 +6,4 @@ influxd -config=/etc/influxdb.conf &
 sleep 5
 influx -execute "CREATE USER telegraf WITH PASSWORD 'telegraf' WITH ALL PRIVILEGES"
 sleep 2
-exec "telegraf"
+telegraf

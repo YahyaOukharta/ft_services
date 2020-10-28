@@ -3,7 +3,7 @@ FROM alpine
 EXPOSE 20-21
 EXPOSE 20020-20021
 
-RUN apk add vsftpd openssl openrc lftp vim
+RUN apk add vsftpd openssl openrc vim
 
 COPY start.sh /start.sh
 RUN chmod 777 /start.sh

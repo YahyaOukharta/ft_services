@@ -198,9 +198,11 @@ spec:
         imagePullPolicy: Never
         ports:
         - containerPort: 80
-          name : nginx
+          name : http
         - containerPort: 22
           name : ssh
+        - containerPort: 443
+          name : https
 ---
 apiVersion: apps/v1
 kind: Deployment

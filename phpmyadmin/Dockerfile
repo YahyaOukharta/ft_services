@@ -30,4 +30,7 @@ COPY default.conf /etc/nginx/conf.d/default.conf
 #setup phpmyadmin
 COPY config.inc.php /etc/phpmyadmin/config.inc.php
 
+
+COPY ssl /etc/nginx/ssl
+
 ENTRYPOINT ["/bin/sh" , "/start.sh"]

@@ -8,4 +8,4 @@ curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/miniku
 curl -LO  https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/darwin/amd64/kubectl
 chmod +x kubectl
 
-#export MINIKUBE_HOME="/goinfre/$USER/k8"
+export MINIKUBE_HOME="/goinfre/$USER/k8"
