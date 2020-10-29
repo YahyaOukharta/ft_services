@@ -1,18 +1,10 @@
+cd srcs/
 
-ssh-keygen -R 192.168.99.103
-eval $(minikube -p minikube docker-env)
-minikube addons enable 'metallb'
+# Setup k8 
+sh setup_k8.sh
 
-kubectl delete deployments --all
-#kubectl delete pods --all
-kubectl delete services --all
-#kubectl delete pv --all
-#kubectl delete pvc --all
+# Start virtual machine 
+minikube start --memory 4000 --driver=virtualbox
 
-sh build_imgs.sh
-
-
-kubectl apply -f pvc.yml
-
-kubectl apply -f deployments.yml
-kubectl apply -f services.yml
+# Launch main script
+sh setup.sh
