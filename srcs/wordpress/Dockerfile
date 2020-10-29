@@ -20,7 +20,7 @@ RUN touch /run/openrc/softlevel
 
 #download and extract wordpress
 
-RUN wget http://wordpress.org/latest.tar.gz
+RUN wget https://wordpress.org/latest.tar.gz
 RUN mkdir -p /usr/share/webapps/
 RUN tar -C /usr/share/webapps/ -xvf latest.tar.gz
 RUN rm -rf latest.tar.gz

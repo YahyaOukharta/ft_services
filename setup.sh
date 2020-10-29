@@ -7,7 +7,13 @@ sh setup_docker.sh
 sh setup_k8.sh
 
 # Start virtual machine 
-minikube start --memory 4000 --driver=virtualbox
+if command -v virtualBox &> /dev/null
+then 
+    minikube start --memory 4000 --driver=virtualbox; 
+else 
+    echo "[!] Install VirtualBox !";
+    exit 1;
+fi
 
 # Launch main script
 sh setup.sh

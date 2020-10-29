@@ -1,9 +1,0 @@
-export PATH="$HOME/.brew/bin:$HOME/.brew/sbin:$PATH:/goinfre/youkhart/k8"
-
-alias nasm="/Users/youkhart/.brew/Cellar/nasm/2.14.02/bin/nasm -f macho64"
-
-alias kubectl="/goinfre/youkhart/k8/kubectl"
-
-alias minikube="/goinfre/youkhart/k8/minikube"
-
-export MINIKUBE_HOME="/goinfre/youkhart/k8"

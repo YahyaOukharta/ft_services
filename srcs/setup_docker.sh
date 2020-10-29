@@ -1,8 +1,8 @@
-export BREW_PATH=/goinfre/${USER}/brew
+#export PATH="/goinfre/${USER}/brew/bin:$PATH:/goinfre/${USER}/k8"
+BREW_PATH=/goinfre/${USER}/brew
 
-git clone https://github.com/Homebrew/brew.git ${BREW_PATH}
+# clone only if folder doesnt exist
+if [ ! -d "${BREW_PATH}" ]; then git clone https://github.com/Homebrew/brew.git ${BREW_PATH}; fi
 
-alias brew=${BREW_PATH}/bin/brew
-brew install docker
-
-alias docker=${BREW_PATH}/bin/docker
+# install docker if doesnt exist
+if [ ! -f "${BREW_PATH}/bin/docker" ]; then brew install docker; fi

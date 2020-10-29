@@ -1,0 +1,2 @@
+export PATH="/goinfre/${USER}/brew/bin:$PATH:/goinfre/${USER}/k8"
+export MINIKUBE_HOME="/goinfre/$USER/k8"
