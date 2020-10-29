@@ -1,4 +1,3 @@
-ssh-keygen -R 192.168.99.103
 
 docker build nginx/ -t nginx-img
 docker build ftps/ -t ftps-img

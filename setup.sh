@@ -1,5 +1,5 @@
 
-
+ssh-keygen -R 192.168.99.103
 eval $(minikube -p minikube docker-env)
 minikube addons enable 'metallb'
 

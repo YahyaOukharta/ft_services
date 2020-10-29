@@ -43,7 +43,7 @@ $cfg['PmaAbsoluteUri'] = (isset($_SERVER['HTTP_X_FORWARDED_FOR']) ? '/phpmyadmin
 $cfg['Servers'][$i]['controlhost'] = '';
 $cfg['Servers'][$i]['controlport'] = '3306';
 $cfg['Servers'][$i]['controluser'] = 'pma';
-$cfg['Servers'][$i]['controlpass'] = 'pmapass';
+$cfg['Servers'][$i]['controlpass'] = 'pmapass2';
 
 /* Storage database and tables */
 $cfg['Servers'][$i]['pmadb'] = 'phpmyadmin';

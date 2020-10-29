@@ -4,8 +4,6 @@ EXPOSE 80 443 22
 
 RUN apk add openrc nginx vim openssh
 
-
-
 COPY start.sh /start.sh
 RUN chmod 777 /start.sh
 

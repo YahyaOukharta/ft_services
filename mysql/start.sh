@@ -1,6 +1,3 @@
-#exec "cat"
-
-#mkdir -p  /run/openrc/
 touch /run/openrc/softlevel
 chmod -R 777 /var/lib/mysql
 export mysqldata=/var/lib/mysql/mysql
