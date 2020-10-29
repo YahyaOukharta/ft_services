@@ -1,6 +1,7 @@
 cd srcs/
 
-#Install brew and docker # sh setup-docker.sh
+#Install brew and docker # 
+sh setup_docker.sh
 
 # Setup k8 
 sh setup_k8.sh

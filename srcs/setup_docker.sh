@@ -1,4 +1,4 @@
-BREW_PATH=/goinfre/${USER}/brew
+export BREW_PATH=/goinfre/${USER}/brew
 
 git clone https://github.com/Homebrew/brew.git ${BREW_PATH}
 
