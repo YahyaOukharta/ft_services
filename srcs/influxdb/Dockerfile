@@ -4,7 +4,7 @@ EXPOSE 8086
 EXPOSE 8088
 
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
-RUN apk add openrc vim influxdb telegraf
+RUN apk add openrc influxdb telegraf
 
 ENV TELEGRAF_CONFIG_PATH /etc/telegraf.conf
 

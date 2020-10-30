@@ -22,7 +22,7 @@ RUN touch /run/openrc/softlevel
 
 RUN wget https://wordpress.org/latest.tar.gz
 RUN mkdir -p /usr/share/webapps/
-RUN tar -C /usr/share/webapps/ -xvf latest.tar.gz
+RUN tar -C /usr/share/webapps/ -xvf latest.tar.gz &> /dev/null
 RUN rm -rf latest.tar.gz
 COPY wp-config.php /usr/share/webapps/wordpress/wp-config.php
 
