@@ -1,4 +1,5 @@
 cd srcs/
+source bash_profile
 
 #Install brew and docker # 
 sh setup_docker.sh
